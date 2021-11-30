@@ -28,6 +28,7 @@ const Tours = () => {
           <h2 className='tour_title'>{tour.name}</h2>
           <p className='tour_info'>{tour.info}</p>
           <h4 className='tour_price'>{tour.price}</h4>
+          <button type='button'></button>
         </div>
       ))}
     </div>
