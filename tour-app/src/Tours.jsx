@@ -4,6 +4,8 @@ import './App.css';
 const Tours = () => {
   const [tours, setTours] = useState([]);
 
+  // Loading State for the App goes below
+
   const url = 'https://course-api.com/react-tours-project';
 
   const fetchTours = async () => {
@@ -12,12 +14,14 @@ const Tours = () => {
     setTours(data);
   };
 
+  // Runs once when the app loads
   useEffect(() => {
     fetchTours();
   }, []);
 
   return (
     <div className='tours_wrapper'>
+      {/* Mapping through the Tour State */}
       {tours.map((tour) => (
         <div key={tour.id} className='card'>
           <img src={tour.image} alt={tour.name} className='tour_img' />
