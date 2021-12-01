@@ -4,9 +4,8 @@ import Loading from './Loading';
 
 const Tours = () => {
   const [tours, setTours] = useState([]);
-  const [load, setLoad] = useState(true);
-
   // Loading State for the App goes below
+  const [load, setLoad] = useState(true);
 
   const url = 'https://course-api.com/react-tours-project';
 
