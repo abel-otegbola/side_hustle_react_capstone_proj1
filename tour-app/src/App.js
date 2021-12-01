@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Tours from './Tours';
+import Tour from './Tour';
 
 function App() {
   return (
     <div>
-      <Tours />
+      <Tour />
     </div>
   );
 }

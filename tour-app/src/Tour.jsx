@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import './index.css';
 import Loading from './Loading';
 
-const Tours = () => {
+const Tour = () => {
   const [tours, setTours] = useState([]);
   // Loading State for the App goes below
-  const [load, setLoad] = useState(true);
+  const [loading, setLoad] = useState(true);
 
   const url = 'https://course-api.com/react-tours-project';
 
@@ -22,28 +22,33 @@ const Tours = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Our Tours</h1>
+    <main className='tours_wrapper'>
+      <h1 className='title'>Our Tours</h1>
       <div className='underline'></div>
-      {load
+      {loading
         ? () => <Loading />
         : tours.map((tour) => (
             <div key={tour.id} className='single-tour'>
-              <img src={tour.image} alt={tour.name} className='tour_img' />
+              <img src={tour.image} alt={tour.name} className='card_img' />
               <div className='single-tour__body'>
                 <div className='tour-info'>
                   <h4>{tour.name}</h4>
+                  <p className='tour-info'></p>
                   <h4 className='tour-price'>{tour.price}</h4>
                 </div>
-                <div className='footer'>
-                  <p className='tour_info'>{tour.info}</p>
+                <div>
+                  <p>
+                    {tour.info}
+                    <button>Show more</button>
+                  </p>
+
                   <button className='delete-btn'>Not Interested</button>
                 </div>
               </div>
             </div>
           ))}
-    </div>
+    </main>
   );
 };
 
-export default Tours;
+export default Tour;

@@ -1,12 +1,8 @@
 import React from 'react';
-import './App.css';
+import './index.css';
 
 const Loading = () => {
-  return (
-    <div className='loading'>
-      <h1>Loading...</h1>
-    </div>
-  );
+  return <div className='loading'>Loading...</div>;
 };
 
 export default Loading;

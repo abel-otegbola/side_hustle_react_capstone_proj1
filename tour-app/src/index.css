@@ -133,6 +133,7 @@ p {
     width: 95vw;
   }
 }
+
 .btn {
   background: var(--clr-primary-5);
   display: inline-block;
@@ -161,10 +162,10 @@ main {
 }
 .title {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .underline {
-  width: 6rem;
+  width: 150px;
   height: 0.25rem;
   background: var(--clr-primary-5);
   margin-left: auto;
@@ -229,4 +230,3 @@ main {
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
 }
-
