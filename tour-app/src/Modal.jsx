@@ -5,8 +5,8 @@ const Modal = ({ show, onClose, handleRemove }) => {
     return null;
   }
   return (
-    <div className='modal'>
-      <div className='modal_container'>
+    <div className='modal' onClick={onClose}>
+      <div className='modal_container' onClick={(e) => e.stopPropagation()}>
         <div className='modal_hd'>
           <div className='modal_title'>
             <h3>Are you sure?</h3>
