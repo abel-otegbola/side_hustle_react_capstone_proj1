@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Tours from './Tours';
 
 function App() {
-
   return (
-        <Tours />
+    <div className='App'>
+      <Tours />
+    </div>
   );
 }
 
