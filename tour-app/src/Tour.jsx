@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 import Loading from './Loading';
+import Modal from './Modal';
 
 const Tour = () => {
   const [tours, setTours] = useState([]);
   // Loading State for the App goes below
   const [loading, setLoad] = useState(true);
+  const [show, setShow] = useState(false);
 
   const url = 'https://course-api.com/react-tours-project';
 
@@ -27,10 +29,11 @@ const Tour = () => {
   }, []);
 
   const handleRemove = (id) => {
+    setShow(true);
     const newList = tours.filter((tour) => tour.id !== id);
-
+    // alert(`Tour ${id} has been removed`);
     setTours(newList);
-  }
+  };
 
   return (
     <div>
@@ -60,13 +63,18 @@ const Tour = () => {
                     <button>Show more</button>
                   </p>
 
-                  <button className='delete-btn' onClick={ () => handleRemove(tour.id)}>Not Interested</button>
+                  <button
+                    className='delete-btn'
+                    onClick={() => handleRemove(tour.id)}>
+                    Not Interested
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </main>
       )}
+      <Modal show={show} onClose={() => setShow(false)} delete={handleRemove} />
     </div>
   );
 };
