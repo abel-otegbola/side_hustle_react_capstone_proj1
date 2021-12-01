@@ -26,6 +26,12 @@ const Tour = () => {
     fetchTours();
   }, []);
 
+  const handleRemove = (id) => {
+    const newList = tours.filter((tour) => tour.id !== id);
+
+    setTours(newList);
+  }
+
   return (
     <div>
       {loading ? (
@@ -54,7 +60,7 @@ const Tour = () => {
                     <button>Show more</button>
                   </p>
 
-                  <button className='delete-btn'>Not Interested</button>
+                  <button className='delete-btn' onClick={ () => handleRemove(tour.id)}>Not Interested</button>
                 </div>
               </div>
             </div>
