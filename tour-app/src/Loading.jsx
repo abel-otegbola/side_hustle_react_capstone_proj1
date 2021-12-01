@@ -4,7 +4,7 @@ import './App.css';
 const Loading = () => {
   return (
     <div className='loading'>
-      <h3>Loading...</h3>
+      <h1>Loading...</h1>
     </div>
   );
 };
