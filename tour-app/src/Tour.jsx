@@ -16,20 +16,32 @@ const Tour = () => {
     setLoad(false);
   };
 
+  function truncate(str, n) {
+    //Truncate a string to n characters
+    return str.length > n ? str.substr(0, n - 1) + '...' : str;
+  }
+
   // Runs once when the app loads
   useEffect(() => {
     fetchTours();
   }, []);
 
   return (
-    <main className='tours_wrapper'>
-      <h1 className='title'>Our Tours</h1>
-      <div className='underline'></div>
-      {loading
-        ? () => <Loading />
-        : tours.map((tour) => (
+    <div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <main className='tours-wrapper'>
+          <h1 className='title'>Our Tours</h1>
+          <div className='underline'></div>
+          {tours.map((tour) => (
             <div key={tour.id} className='single-tour'>
-              <img src={tour.image} alt={tour.name} className='card_img' />
+              <img
+                src={tour.image}
+                alt={tour.name}
+                className='card_img'
+                loading='lazy'
+              />
               <div className='single-tour__body'>
                 <div className='tour-info'>
                   <h4>{tour.name}</h4>
@@ -38,7 +50,7 @@ const Tour = () => {
                 </div>
                 <div>
                   <p>
-                    {tour.info}
+                    {truncate(tour.info, 300)}
                     <button>Show more</button>
                   </p>
 
@@ -47,8 +59,9 @@ const Tour = () => {
               </div>
             </div>
           ))}
-    </main>
+        </main>
+      )}
+    </div>
   );
 };
-
 export default Tour;

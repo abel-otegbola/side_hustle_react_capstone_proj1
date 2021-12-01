@@ -159,6 +159,8 @@ main {
 }
 .loading {
   text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
 }
 .title {
   text-align: center;
