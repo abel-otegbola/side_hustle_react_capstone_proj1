@@ -33,25 +33,32 @@ const Tours = () => {
         <div className="title">
           <h1>Our Tours</h1>
           <div className="underline"></div>
-        </div>
-          {/* Mapping through the Tour State */}
-          {tours.map((tour) => (
-            <div key={tour.id} className='single-tour'>
-              <img src={tour.image} alt={tour.name} className='tour_img' />
-              <div className="single-tour__body">
-                <div className="tour-info">
-                  <h4>{tour.name}</h4>
-                  <h4 className='tour-price'>{tour.price}</h4>
-                </div>
-                <div className="footer">
-                    <p className='tour_info'>{tour.info}</p>
-                <button className="delete-btn">Not Interested</button>
-                </div>
-              </div>
+          <div className='tours_wrapper'>
+            {/* Mapping through the Tour State */}
+            {tours.map((tour) => (
+//               <div key={tour.id} className='card'>
+//                 <img src={tour.image} alt={tour.name} className='tour_img' />
+//                 <h2 className='tour_title'>{tour.name}</h2>
+//                 <p className='tour_info'>{tour.info}</p>
+//                 <h4 className='tour_price'>{tour.price}</h4>
+//                 <button type='button'>Read more</button>
+//               </div>
+              {tours.map((tour) => (
+                <div key={tour.id} className='single-tour'>
+                  <img src={tour.image} alt={tour.name} className='tour_img' />
+                  <div className="single-tour__body">
+                    <div className="tour-info">
+                      <h4>{tour.name}</h4>
+                      <h4 className='tour-price'>{tour.price}</h4>
+                    </div>
+                    <div className="footer">
+                        <p className='tour_info'>{tour.info}</p>
+                    <button className="delete-btn">Not Interested</button>
+                    </div>
+                  </div>
+                ))}
             </div>
-          ))}
-    </main>
-    }
+          </main>
       </>
   );
 };
