@@ -312,3 +312,13 @@ main {
 .modal_body button:nth-child(2):hover {
   background: var(--clr-grey-5);
 }
+.reload {
+  text-align: center;
+  padding-top: 2rem;
+}
+.reload button {
+  background-color: var(--clr-primary-3);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+}

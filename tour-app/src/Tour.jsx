@@ -35,12 +35,30 @@ const Tour = () => {
     setTours(newList);
   };
 
+  const handleRefresh = () => {
+    location.reload()
+  }
+
+  const handleShowMore = (id) => {
+    if (show === "Show more") {
+      const fullPara = tours.filter(tour => tour.id === id)[0].info
+      setShow("Show less")
+      setTruncPara({id, info: fullPara})
+    }
+    else {
+      const fullPara = truncate(tours.filter(tour => tour.id === id)[0].info, 300)
+      setShow("Show more")
+      setTruncPara({id, info: fullPara})
+    }
+  }
+
   return (
     <div>
       {loading ? (
         <Loading />
       ) : (
-        <main className='tours-wrapper'>
+        tours.length !== 0 ?
+         <main className='tours-wrapper'>
           <h1 className='title'>Our Tours</h1>
           <div className='underline'></div>
           {tours.map((tour) => (
@@ -51,7 +69,7 @@ const Tour = () => {
                 className='card_img'
                 loading='lazy'
               />
-              <div className='single-tour__body'>
+              <div className='single-tour__body' onClick={() => handleShowMore(tour.id)}>
                 <div className='tour-info'>
                   <h4>{tour.name}</h4>
                   <p className='tour-info'></p>
@@ -59,8 +77,8 @@ const Tour = () => {
                 </div>
                 <div>
                   <p>
-                    {truncate(tour.info, 300)}
-                    <button>Show more</button>
+                    {(truncPara.id === tour.id) ? truncPara.info : truncate(tour.info, 300)}
+                    <button>{(truncPara.id === tour.id) ? show : "Show More"}</button>
                   </p>
 
                   <button
