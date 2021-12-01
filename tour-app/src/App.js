@@ -4,7 +4,7 @@ import Tours from './Tours';
 
 function App() {
   return (
-    <div className='App'>
+    <div>
       <Tours />
     </div>
   );

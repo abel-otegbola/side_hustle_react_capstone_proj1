@@ -28,11 +28,18 @@ const Tours = () => {
       {load
         ? () => <Loading />
         : tours.map((tour) => (
-            <div key={tour.id}>
-              <img src={tour.image} alt={tour.name} />
-              <h1>{tour.name}</h1>
-              <p>{tour.description}</p>
-              <p>{tour.price}</p>
+            <div key={tour.id} className='single-tour'>
+              <img src={tour.image} alt={tour.name} className='tour_img' />
+              <div className='single-tour__body'>
+                <div className='tour-info'>
+                  <h4>{tour.name}</h4>
+                  <h4 className='tour-price'>{tour.price}</h4>
+                </div>
+                <div className='footer'>
+                  <p className='tour_info'>{tour.info}</p>
+                  <button className='delete-btn'>Not Interested</button>
+                </div>
+              </div>
             </div>
           ))}
     </div>
