@@ -7,7 +7,6 @@ const Tour = () => {
   const [tours, setTours] = useState([]);
   // Loading State for the App goes below
   const [loading, setLoad] = useState(true);
-  const [showModal, setShowModal] = useState(false);
   const [show, setShow] = useState('Show more');
   const [truncPara, setTruncPara] = useState({});
 
@@ -44,7 +43,7 @@ const Tour = () => {
   };
 
   const handleShowMore = (id) => {
-    if (showModal === 'Show more') {
+    if (show === 'Show more') {
       const fullPara = tours.filter((tour) => tour.id === id)[0].info;
       setShow('Show less');
       setTruncPara({ id, info: fullPara });
