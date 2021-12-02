@@ -35,7 +35,7 @@ const Tour = () => {
 
   const alertDelete = (id) => {
     // eslint-disable-next-line no-restricted-globals
-    let alertUser = confirm('Do you want to continue ?');
+    let alertUser = confirm(`Are you sure you want to delete this tour ${id}?`);
     if (alertUser === true) {
       const newList = tours.filter((tour) => tour.id !== id);
       setTours(newList);
