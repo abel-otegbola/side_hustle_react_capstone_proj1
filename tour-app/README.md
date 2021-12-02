@@ -32,7 +32,7 @@
 5. When a user types in the search input field, update the SideHustle logo to the value in the input field.
 6. When the input field is empty, display the logo again
 
-### Video Demo
+### Demo Video
 
 https://user-images.githubusercontent.com/88737410/144467947-b7b50e4b-1626-495f-bd9e-9460517534ee.mp4
 
