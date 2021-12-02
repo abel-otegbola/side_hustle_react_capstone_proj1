@@ -22,9 +22,6 @@
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-## Overview
-
-![Project Demo](src/demo.png "Side Hustle Project Demo")
 
 ### The challenge
 
