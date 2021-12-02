@@ -112,7 +112,6 @@ const Tour = () => {
           <button onClick={() => handleRefresh()}>Refresh</button>
         </div>
       )}
-      )
     </div>
   );
 };
