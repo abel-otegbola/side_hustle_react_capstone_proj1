@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# SideHustle Internship
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Team LIBYA - Tour Project with ReactJs Library
 
-## Available Scripts
+### Welcome! 👋
 
-In the project directory, you can run:
+**To do this challenge, you need a basic understanding of HTML, CSS, JavaScript and React**
 
-### `yarn start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Video](#video)
+  - [Links](#links)
+- [The process](#the-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [Where to find everything](#where-to-find-everything)
+  - [Building your project](#building-your-project)
+  - [Deploying your project](#deploying-your-project)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### The challenge
 
-### `yarn test`
+1. Use React Js
+2. Provide a useable experience across all modern web browsers and users who require assistive technologies .
+3. Recreate the Google homepage [Google](https://www.google.com/)
+4. Replace the Google Logo with SideHustle logo
+5. When a user types in the search input field, update the SideHustle logo to the value in the input field.
+6. When the input field is empty, display the logo again
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Video
 
-### `yarn build`
+https://user-images.githubusercontent.com/88737410/144467947-b7b50e4b-1626-495f-bd9e-9460517534ee.mp4
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [https://github.com/testprojcts/side_hustle_react_capstone_proj1](https://github.com/testprojcts/side_hustle_react_capstone_proj1)
+- Live Site URL: [Google Clone](hosted link)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## The process
 
-### `yarn eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- [React](https://reactjs.org/) - JS library
+- Mobile Responsiveness
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### What we learned
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+We learnt how to build UI with React and update the state using React useState Hook with React `useEffect` to fetch data from our given API url. And also how to implement the loading state when the data called from the API isn't ready yet.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Continued development
 
-## Learn More
+We want to focus more on State management, API using the React `useEffect` Hook and debugging.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Useful resources
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [useState Hooks](https://reactjs.org/docs/hooks-state.html) - This helped with the syntax and how to apply it to a function.
+- [useEffect Hook](https://reactjs.org/docs/hooks-effect.html) - This helped or enabled us to get data from an external server (API) in order to display content to our users.
 
-### Code Splitting
+## Where to find everything
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The Components are in the src folder `src`.
 
-### Analyzing the Bundle Size
+## Building your project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Initialize your project
 
-### Making a Progressive Web App
+```
+npx create-react-app appName
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+cd appName
 
-### Advanced Configuration
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. Edit the files you want to and it updates on the localhost.
 
-### Deployment
+## Deploying your project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [Netlify](https://www.netlify.com/)
 
-### `yarn build` fails to minify
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Thompson April](https://github.com/Apreal-T)
+- [Abiola Ayodele](https://github.com/babboe1)
+- [Abel](https://github.com/abel-otegbola)
+- [Erasmus Mensah](https://github.com/testprojcts)
+- [Eugene Ishado](https://github.com/Eugene44-hub)
+- [Olamide Faniyan](https://github.com/Pajimo)
+- [Shuaib Akanbi](https://github.com/Akanbi99)
+
+## Acknowledgements
+
+The entire family of SideHustle Internship React 4.0 🎊✨
+
+## Have Fun Building! 🚀
+
+## Happy Coding..... 😍😎😋
