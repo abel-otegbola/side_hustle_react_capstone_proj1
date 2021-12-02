@@ -1,11 +1,8 @@
 import React from 'react';
 
-const Modal = ({ show, onClose, handleRemove }) => {
-  if (!show) {
-    return null;
-  }
+const Modal = () => {
   return (
-    <div className='modal' onClick={onClose}>
+    <div className='modal'>
       <div className='modal_container' onClick={(e) => e.stopPropagation()}>
         <div className='modal_hd'>
           <div className='modal_title'>
@@ -13,8 +10,8 @@ const Modal = ({ show, onClose, handleRemove }) => {
           </div>
         </div>
         <div className='modal_body'>
-          <button onClick={handleRemove}>Yes</button>
-          <button onClick={onClose}>Cancel</button>
+          <button>Yes</button>
+          <button>Cancel</button>
         </div>
       </div>
     </div>

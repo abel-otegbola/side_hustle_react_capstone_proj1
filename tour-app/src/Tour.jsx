@@ -30,11 +30,16 @@ const Tour = () => {
   }, []);
 
   const handleRemove = (id) => {
-    setShowModal(true);
-    // if()
-    const newList = tours.filter((tour) => tour.id !== id);
-    // alert(`Tour ${id} has been removed`);
-    setTours(newList);
+    alertDelete(id);
+  };
+
+  const alertDelete = (id) => {
+    // eslint-disable-next-line no-restricted-globals
+    let alertUser = confirm('Do you want to continue ?');
+    if (alertUser === true) {
+      const newList = tours.filter((tour) => tour.id !== id);
+      setTours(newList);
+    } else return;
   };
 
   const handleRefresh = () => {
@@ -111,4 +116,5 @@ const Tour = () => {
     </div>
   );
 };
+
 export default Tour;
