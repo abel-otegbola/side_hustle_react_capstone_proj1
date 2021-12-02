@@ -8,6 +8,7 @@ const Tour = () => {
   // Loading State for the App goes below
   const [loading, setLoad] = useState(true);
   const [show, setShow] = useState('Show more');
+  const [showModal, setShowModal] = useState(false)
   const [truncPara, setTruncPara] = useState({});
 
   const url = 'https://course-api.com/react-tours-project';
@@ -73,16 +74,13 @@ const Tour = () => {
                 className='card_img'
                 loading='lazy'
               />
-              <div
-                className='single-tour__body'
-                onClick={() => handleShowMore(tour.id)}>
+              <div className='single-tour__body' >
                 <div className='tour-info'>
                   <h4>{tour.name}</h4>
-                  <p className='tour-info'></p>
                   <h4 className='tour-price'>{tour.price}</h4>
                 </div>
                 <div>
-                  <p>
+                  <p onClick={() => handleShowMore(tour.id)}>
                     {truncPara.id === tour.id
                       ? truncPara.info
                       : truncate(tour.info, 300)}
