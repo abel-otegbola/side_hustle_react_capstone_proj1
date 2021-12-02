@@ -316,9 +316,23 @@ main {
   text-align: center;
   padding-top: 2rem;
 }
+
+.reload h3 {
+  font-size: 38px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
 .reload button {
   background-color: var(--clr-primary-3);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 2rem;
   border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.reload button:hover {
+  background-color: var(--clr-primary-2);
+  transition: all 0.25s ease-in-out;
 }

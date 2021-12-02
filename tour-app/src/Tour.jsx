@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 import Loading from './Loading';
-import Modal from './Modal';
+// import Modal from './Modal';
 
 const Tour = () => {
   const [tours, setTours] = useState([]);
   // Loading State for the App goes below
   const [loading, setLoad] = useState(true);
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [show, setShow] = useState('Show more');
+  const [truncPara, setTruncPara] = useState({});
 
   const url = 'https://course-api.com/react-tours-project';
 
@@ -29,36 +31,39 @@ const Tour = () => {
   }, []);
 
   const handleRemove = (id) => {
-    setShow(true);
+    setShowModal(true);
+    // if()
     const newList = tours.filter((tour) => tour.id !== id);
     // alert(`Tour ${id} has been removed`);
     setTours(newList);
   };
 
   const handleRefresh = () => {
-    location.reload()
-  }
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
+  };
 
   const handleShowMore = (id) => {
-    if (show === "Show more") {
-      const fullPara = tours.filter(tour => tour.id === id)[0].info
-      setShow("Show less")
-      setTruncPara({id, info: fullPara})
+    if (showModal === 'Show more') {
+      const fullPara = tours.filter((tour) => tour.id === id)[0].info;
+      setShow('Show less');
+      setTruncPara({ id, info: fullPara });
+    } else {
+      const fullPara = truncate(
+        tours.filter((tour) => tour.id === id)[0].info,
+        300
+      );
+      setShow('Show more');
+      setTruncPara({ id, info: fullPara });
     }
-    else {
-      const fullPara = truncate(tours.filter(tour => tour.id === id)[0].info, 300)
-      setShow("Show more")
-      setTruncPara({id, info: fullPara})
-    }
-  }
+  };
 
   return (
     <div>
       {loading ? (
         <Loading />
-      ) : (
-        tours.length !== 0 ?
-         <main className='tours-wrapper'>
+      ) : tours.length !== 0 ? (
+        <main className='tours-wrapper'>
           <h1 className='title'>Our Tours</h1>
           <div className='underline'></div>
           {tours.map((tour) => (
@@ -69,7 +74,9 @@ const Tour = () => {
                 className='card_img'
                 loading='lazy'
               />
-              <div className='single-tour__body' onClick={() => handleShowMore(tour.id)}>
+              <div
+                className='single-tour__body'
+                onClick={() => handleShowMore(tour.id)}>
                 <div className='tour-info'>
                   <h4>{tour.name}</h4>
                   <p className='tour-info'></p>
@@ -77,8 +84,12 @@ const Tour = () => {
                 </div>
                 <div>
                   <p>
-                    {(truncPara.id === tour.id) ? truncPara.info : truncate(tour.info, 300)}
-                    <button>{(truncPara.id === tour.id) ? show : "Show More"}</button>
+                    {truncPara.id === tour.id
+                      ? truncPara.info
+                      : truncate(tour.info, 300)}
+                    <button>
+                      {truncPara.id === tour.id ? show : 'Show More'}
+                    </button>
                   </p>
 
                   <button
@@ -91,8 +102,13 @@ const Tour = () => {
             </div>
           ))}
         </main>
+      ) : (
+        <div className='reload'>
+          <h3>No more tours remaining</h3>
+          <button onClick={() => handleRefresh()}>Refresh</button>
+        </div>
       )}
-      // <Modal show={show} onClose={() => setShow(false)} delete={handleRemove} />
+      )
     </div>
   );
 };
