@@ -73,11 +73,11 @@ The Components are in the src folder `src`.
 1. Initialize your project
 
 ```
-npx create-react-app appName
+`npx create-react-app appName`
 
-cd appName
+`cd appName`
 
-npm start
+`npm start`
 ```
 
 2. Edit the files you want to and it updates on the localhost.
